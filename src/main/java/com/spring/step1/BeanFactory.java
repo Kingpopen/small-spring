@@ -10,16 +10,17 @@ import java.util.concurrent.ConcurrentHashMap;
  * @date 2023/12/7 21:00:55
  */
 public class BeanFactory {
-    // 存放bean
-    private Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<String, BeanDefinition>();
 
-    // 获取bean
-    public Object getBean(String name){
-        return beanDefinitionMap.get(name).getBean();
-    }
+  // 存放bean
+  private final Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<String, BeanDefinition>();
 
-    // 注册bean
-    public void registerBean(String name, BeanDefinition beanDefinition){
-        beanDefinitionMap.put(name, beanDefinition);
-    }
+  // 获取bean
+  public Object getBean(String name) {
+    return beanDefinitionMap.get(name).getBean();
+  }
+
+  // 注册bean
+  public void registerBean(String name, BeanDefinition beanDefinition) {
+    beanDefinitionMap.put(name, beanDefinition);
+  }
 }

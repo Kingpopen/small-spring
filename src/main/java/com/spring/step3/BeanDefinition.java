@@ -1,17 +1,19 @@
-package com.spring.step1;
+package com.spring.step3;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author 彭锦波
  * @project small-spring
  * @description
- * @date 2023/12/7 20:58:15
+ * @date 2023/12/10 10:27:32
  */
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class BeanDefinition {
 
-  private Object bean;
+  private Class bean;
 }
