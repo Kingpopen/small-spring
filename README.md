@@ -23,3 +23,6 @@ Factory: 整合了singleton 和 beanDefinition
 策略作为属性放在 Bean工厂里面，**辅助Bean的创建**
 
 当两个方法的逻辑都比较类似时，可以将共有的部分抽出来单独作为一个方法。
+
+#### step4
+给Bean添加属性

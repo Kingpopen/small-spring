@@ -4,6 +4,7 @@ import com.spring.step3.BeanDefinition;
 import com.spring.step3.exception.BeanException;
 import com.spring.step3.strategy.CglibStrategy;
 import com.spring.step3.strategy.InstantiationStrategy;
+import com.spring.step3.factory.AbstractBeanFactory;
 import java.lang.reflect.Constructor;
 import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @author 彭锦波
  * @project small-spring
- * @description 工厂抽象类
+ * @description 工厂抽象类 额外实现了bean的创建 和 存储
  * @date 2023/12/10 11:36:18
  */
 @Slf4j
