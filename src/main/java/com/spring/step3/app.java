@@ -11,6 +11,7 @@ public class app {
 
   public static void main(String[] args) {
     // 1. 创建工厂
+    // Todo 这里的BeanFactory的接口中为什么没有 registerBeanDefinition的方法呢？ 这样就可以使用多态
     DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
 
     // 2. 创建BeanDefinition 并 进行注册
