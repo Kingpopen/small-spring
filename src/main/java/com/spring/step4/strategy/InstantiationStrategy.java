@@ -12,5 +12,5 @@ import java.lang.reflect.Constructor;
 public interface InstantiationStrategy {
 
   // 实例化的方法
-  Object instantiate(BeanDefinition beanDefinition, Constructor ctor, Object[] args);
+  Object instantiate(BeanDefinition beanDefinition, Constructor<?> ctor, Object[] args);
 }

@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
 
-  private final Map<String, Object> singletonObjects = new HashMap<String, Object>();
+  private final Map<String, Object> singletonObjects = new HashMap<>();
 
   // 异常以及为空判断 放在外层
   public Object getSingleton(String name) {

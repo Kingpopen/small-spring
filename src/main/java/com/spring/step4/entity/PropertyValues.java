@@ -16,15 +16,6 @@ public class PropertyValues {
 
   private List<PropertyValue> propertyValueList = new ArrayList<>();
 
-  public PropertyValue getPropertyValue(String name) {
-    for (PropertyValue item : propertyValueList) {
-      if (name.equals(item.getName())) {
-        return item;
-      }
-    }
-    throw new BeanException(String.format("找不到名称为:[%s]的属性", name));
-  }
-
   // 添加属性
   public void addPropertyValue(PropertyValue propertyValue) {
     propertyValueList.add(propertyValue);

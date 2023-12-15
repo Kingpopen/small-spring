@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class UserDao {
 
-  private static Map<String, String> map = new HashMap<>();
+  private static final Map<String, String> map = new HashMap<>();
 
   static {
     map.put("1", "mike");

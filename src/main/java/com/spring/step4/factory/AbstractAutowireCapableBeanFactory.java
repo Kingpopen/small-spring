@@ -46,12 +46,11 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     return bean;
   }
 
-  protected Object createBeanInstance(BeanDefinition definition, Object[] args)
-      throws NoSuchMethodException {
-    Constructor constructorUse = null;
-    Class clazz = definition.getBean();
-    Constructor[] ctors = clazz.getDeclaredConstructors();
-    for (Constructor ctor : ctors) {
+  protected Object createBeanInstance(BeanDefinition definition, Object[] args) {
+    Constructor<?> constructorUse = null;
+    Class<?> clazz = definition.getBean();
+    Constructor<?>[] ctors = clazz.getDeclaredConstructors();
+    for (Constructor<?> ctor : ctors) {
       if (!Objects.isNull(args) && ctor.getParameters().length == args.length) {
         constructorUse = ctor;
         break;

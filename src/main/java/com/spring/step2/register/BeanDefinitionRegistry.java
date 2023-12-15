@@ -11,5 +11,5 @@ import com.spring.step2.BeanDefinition;
 public interface BeanDefinitionRegistry {
 
   // 只有注册的方法 没有获取的方法 单一职责原则
-  public void registerBeanDefinition(String name, BeanDefinition beanDefinition);
+  void registerBeanDefinition(String name, BeanDefinition beanDefinition);
 }
