@@ -1,4 +1,5 @@
 package com.spring.step4;
+
 import com.spring.step4.entity.BeanDefinition;
 import com.spring.step4.entity.BeanReference;
 import com.spring.step4.entity.PropertyValue;
@@ -24,7 +25,7 @@ public class app {
     // 这个userDao 是属性的名称
     PropertyValue userDaoProperty = new PropertyValue("userDao", beanReference);
     PropertyValue idProperty = new PropertyValue("id", "2");
-    PropertyValue ageProperty = new PropertyValue("age",  25);
+    PropertyValue ageProperty = new PropertyValue("age", 25);
     PropertyValue userProperty = new PropertyValue("friend", new User("kingpopen", 26));
     propertyValues.addPropertyValue(userDaoProperty);
     propertyValues.addPropertyValue(idProperty);

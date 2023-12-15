@@ -30,7 +30,7 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 
 
   // 抽象出一个共有的方法
-  protected Object doGetBean(String name, Object[] args){
+  protected Object doGetBean(String name, Object[] args) {
     Object singleton = getSingleton(name);
     if (!Objects.isNull(singleton)) {
       return singleton;

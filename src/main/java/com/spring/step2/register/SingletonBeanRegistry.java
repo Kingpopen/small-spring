@@ -7,5 +7,6 @@ package com.spring.step2.register;
  * @date 2023/12/10 11:02:42
  */
 public interface SingletonBeanRegistry {
-    Object getSingleton(String name);
+
+  Object getSingleton(String name);
 }

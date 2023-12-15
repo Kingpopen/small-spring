@@ -13,11 +13,12 @@ import lombok.Data;
  */
 @Data
 public class PropertyValues {
+
   private List<PropertyValue> propertyValueList = new ArrayList<>();
 
-  public PropertyValue getPropertyValue(String name){
-    for(PropertyValue item : propertyValueList){
-      if (name.equals(item.getName())){
+  public PropertyValue getPropertyValue(String name) {
+    for (PropertyValue item : propertyValueList) {
+      if (name.equals(item.getName())) {
         return item;
       }
     }
@@ -25,7 +26,7 @@ public class PropertyValues {
   }
 
   // 添加属性
-  public void addPropertyValue(PropertyValue propertyValue){
+  public void addPropertyValue(PropertyValue propertyValue) {
     propertyValueList.add(propertyValue);
   }
 }

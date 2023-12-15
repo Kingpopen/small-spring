@@ -61,13 +61,13 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
   }
 
   // 注入属性
-  private void addField(Object bean, BeanDefinition beanDefinition){
+  private void addField(Object bean, BeanDefinition beanDefinition) {
     PropertyValues propertyValues = beanDefinition.getPropertyValues();
     propertyValues.getPropertyValueList().forEach(item -> {
       String name = item.getName();
       Object val = item.getVal();
 
-      if (val instanceof BeanReference){
+      if (val instanceof BeanReference) {
         BeanReference beanReference = (BeanReference) val;
         val = getBean(beanReference.getName());
       }

@@ -12,6 +12,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class PropertyValue {
+
   private String name;
   private Object val;
 }

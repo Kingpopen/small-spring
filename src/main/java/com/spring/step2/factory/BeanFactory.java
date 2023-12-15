@@ -7,5 +7,6 @@ package com.spring.step2.factory;
  * @date 2023/12/10 10:29:42
  */
 public interface BeanFactory {
-    public Object getBean(String name);
+
+  public Object getBean(String name);
 }

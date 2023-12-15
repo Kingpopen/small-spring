@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserService {
+
   // jdk 自带类
   private String id;
   // jdk 基础类型

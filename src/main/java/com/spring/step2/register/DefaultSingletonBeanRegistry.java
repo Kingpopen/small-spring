@@ -9,16 +9,17 @@ import java.util.Map;
  * @description 单实例bean注册的抽象类
  * @date 2023/12/10 11:04:05
  */
-public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry{
-    private Map<String, Object> singletonObjects = new HashMap<String, Object>();
+public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
 
-    // 异常以及为空判断 放在外层
-    public Object getSingleton(String name) {
-        return singletonObjects.get(name);
-    }
+  private Map<String, Object> singletonObjects = new HashMap<String, Object>();
 
-    // bean实例的添加
-    protected void addSingleton(String name, Object singletonObject){
-        singletonObjects.put(name, singletonObject);
-    }
+  // 异常以及为空判断 放在外层
+  public Object getSingleton(String name) {
+    return singletonObjects.get(name);
+  }
+
+  // bean实例的添加
+  protected void addSingleton(String name, Object singletonObject) {
+    singletonObjects.put(name, singletonObject);
+  }
 }

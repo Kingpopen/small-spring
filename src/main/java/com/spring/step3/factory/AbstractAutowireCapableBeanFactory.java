@@ -4,7 +4,6 @@ import com.spring.step3.BeanDefinition;
 import com.spring.step3.exception.BeanException;
 import com.spring.step3.strategy.CglibStrategy;
 import com.spring.step3.strategy.InstantiationStrategy;
-import com.spring.step3.factory.AbstractBeanFactory;
 import java.lang.reflect.Constructor;
 import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;

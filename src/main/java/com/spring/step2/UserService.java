@@ -1,7 +1,5 @@
 package com.spring.step2;
 
-import lombok.Data;
-
 /**
  * @author 彭锦波
  * @project small-spring
@@ -9,7 +7,8 @@ import lombok.Data;
  * @date 2023/12/10 12:08:14
  */
 public class UserService {
-    public void find(){
-        System.out.println("find user!");
-    }
+
+  public void find() {
+    System.out.println("find user!");
+  }
 }
