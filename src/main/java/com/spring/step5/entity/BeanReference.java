@@ -13,6 +13,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class BeanReference {
 
-  // 因为实例是交给容器进行管理 所以这个地方只需要存储
+  // 因为实例是交给容器进行管理 所以这个地方只需要存储bean的名称
   private String name;
 }

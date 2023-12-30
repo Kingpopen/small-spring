@@ -4,6 +4,7 @@ import cn.hutool.core.util.ClassUtil;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Objects;
+import lombok.NoArgsConstructor;
 
 /**
  * @author 彭锦波
@@ -11,6 +12,7 @@ import java.util.Objects;
  * @description 类文件资源
  * @date 2023/12/20 12:08:47
  */
+@NoArgsConstructor
 public class ClassPathResource implements Resource {
 
   private String classPath;

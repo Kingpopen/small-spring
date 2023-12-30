@@ -2,6 +2,7 @@ package com.spring.step5;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
@@ -12,6 +13,7 @@ import lombok.ToString;
  */
 @Data
 @ToString
+@NoArgsConstructor
 @AllArgsConstructor
 public class User {
 

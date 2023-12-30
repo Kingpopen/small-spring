@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+  <bean id="userDao" class="com.spring.step5.UserDao"/>
+  <bean id="friend" class="com.spring.step5.User">
+    <property name="name" value="kingpopen"/>
+    <property name="age" value="18"/>
+  </bean>
+  <bean id="userService" class="com.spring.step5.UserService">
+    <property name="id" value="1"/>
+    <property name="age" value="12"/>
+    <property name="friend" ref="friend"/>
+    <property name="userDao" ref="userDao"/>
+  </bean>
+</beans>
