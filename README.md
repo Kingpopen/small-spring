@@ -9,12 +9,12 @@ bean注册，bean生成，bean获取
 
 
 SingletonRegistry 进行bean的存储管理：注册、获取 (不负责创建)
+
 Factory 进行bean的获取，定义getBean()方法，采用了模版方法的设计模式
 
 BeanDefinitionRegistry是进行beanDefinition的管理：注册，获取
 
-Factory: 整合了singleton 和 beanDefinition
-         负责bean的创建，以及bean的获取
+Factory: 整合了singleton 和 beanDefinition 负责bean的创建，以及bean的获取
 
 #### step3
 添加可以支持带参数的Bean的初始化

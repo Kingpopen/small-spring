@@ -1,8 +1,6 @@
 package com.spring.step2;
 
-import com.spring.step2.factory.BeanFactory;
 import com.spring.step2.factory.DefaultListableBeanFactory;
-import com.sun.xml.internal.fastinfoset.algorithm.BooleanEncodingAlgorithm;
 
 /**
  * @author 彭锦波
