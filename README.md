@@ -55,9 +55,13 @@ PropertyValues封装了PropertyValue，PropertyValue类中记录了Bean的每个
 ```
 这样代码显得很冗余，所以现在想要通过读取xml来生成bean交给Spring进行管理，需要读取xml首先需要实现一个文件读取的接口，
 该接口应该包含三个基础功能：
+
 1.普通本地文件读取
+
 2.类文件读取
+
 3.网络文件读取
+
 这个接口就是ReSource.java, 其中含有getInputStream()的方法
 上述三个功能分别写3个类实现该接口，感觉像是3种策略。
 
@@ -69,9 +73,13 @@ BeanDefinitionReader 就是一个进行 文件读取和解析 并进行bean注�
 当下我们是通过xml文件格式，因此写一个XmlBeanDefinitionReader实现该接口。
 
 bean注入流程是：
+
 1.文件解析
+
 2.BeanDefinition的生成
+
 3.PropertyValue属性的注入
+
 4.Bean的注册
 
 
