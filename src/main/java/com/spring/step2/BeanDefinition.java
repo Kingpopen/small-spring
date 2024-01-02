@@ -14,5 +14,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BeanDefinition {
-    private Class bean;
+
+  private Class<?> bean;
 }

@@ -1,6 +1,6 @@
 package com.spring.step4.strategy;
 
-import com.spring.step3.BeanDefinition;
+import com.spring.step4.entity.BeanDefinition;
 import com.spring.step4.exception.BeanException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -16,9 +16,9 @@ public class SimpleStrategy implements InstantiationStrategy {
 
   // 进行实例化
   @Override
-  public Object instantiate(BeanDefinition beanDefinition, Constructor ctor, Object[] args) {
+  public Object instantiate(BeanDefinition beanDefinition, Constructor<?> ctor, Object[] args) {
     Object obj = null;
-    Class beanClazz = beanDefinition.getBean();
+    Class<?> beanClazz = beanDefinition.getBean();
     try {
       if (!Objects.isNull(ctor)) {
         obj = beanClazz.getDeclaredConstructor(ctor.getParameterTypes()).newInstance(args);

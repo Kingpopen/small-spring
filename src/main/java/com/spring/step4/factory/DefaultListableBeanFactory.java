@@ -1,6 +1,6 @@
 package com.spring.step4.factory;
 
-import com.spring.step3.BeanDefinition;
+import com.spring.step4.entity.BeanDefinition;
 import com.spring.step4.exception.BeanException;
 import com.spring.step4.register.BeanDefinitionRegistry;
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import java.util.Objects;
 /**
  * @author 彭锦波
  * @project small-spring
- * @description bean工厂
+ * @description bean工厂 额外实现了BeanDefinition的管理
  * @date 2023/12/10 11:55:26
  */
 public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements

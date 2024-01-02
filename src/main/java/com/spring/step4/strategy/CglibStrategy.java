@@ -1,6 +1,6 @@
 package com.spring.step4.strategy;
 
-import com.spring.step3.BeanDefinition;
+import com.spring.step4.entity.BeanDefinition;
 import java.lang.reflect.Constructor;
 import java.util.Objects;
 import net.sf.cglib.proxy.Enhancer;
@@ -15,7 +15,7 @@ import net.sf.cglib.proxy.NoOp;
 public class CglibStrategy implements InstantiationStrategy {
 
   @Override
-  public Object instantiate(BeanDefinition beanDefinition, Constructor ctor, Object[] args) {
+  public Object instantiate(BeanDefinition beanDefinition, Constructor<?> ctor, Object[] args) {
     Enhancer enhancer = new Enhancer();
     enhancer.setSuperclass(beanDefinition.getBean());
     enhancer.setCallback(new NoOp() {

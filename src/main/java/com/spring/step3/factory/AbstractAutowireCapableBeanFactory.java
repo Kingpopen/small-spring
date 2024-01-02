@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * @author 彭锦波
  * @project small-spring
- * @description 工厂抽象类
+ * @description 工厂抽象类 额外实现了bean的创建 和 存储
  * @date 2023/12/10 11:36:18
  */
 @Slf4j
@@ -38,12 +38,11 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     return bean;
   }
 
-  protected Object createBeanInstance(BeanDefinition definition, Object[] args)
-      throws NoSuchMethodException {
-    Constructor constructorUse = null;
-    Class clazz = definition.getBean();
-    Constructor[] ctors = clazz.getDeclaredConstructors();
-    for (Constructor ctor : ctors) {
+  protected Object createBeanInstance(BeanDefinition definition, Object[] args) {
+    Constructor<?> constructorUse = null;
+    Class<?> clazz = definition.getBean();
+    Constructor<?>[] ctors = clazz.getDeclaredConstructors();
+    for (Constructor<?> ctor : ctors) {
       if (!Objects.isNull(args) && ctor.getParameters().length == args.length) {
         constructorUse = ctor;
         break;

@@ -1,6 +1,6 @@
 package com.spring.step4.register;
 
-import com.spring.step3.BeanDefinition;
+import com.spring.step4.entity.BeanDefinition;
 
 /**
  * @author 彭锦波

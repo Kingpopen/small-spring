@@ -10,7 +10,7 @@ import java.util.Objects;
 /**
  * @author 彭锦波
  * @project small-spring
- * @description bean工厂
+ * @description bean工厂 额外实现了BeanDefinition的管理
  * @date 2023/12/10 11:55:26
  */
 public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements

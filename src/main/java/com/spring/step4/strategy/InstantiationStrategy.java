@@ -1,6 +1,6 @@
 package com.spring.step4.strategy;
 
-import com.spring.step3.BeanDefinition;
+import com.spring.step4.entity.BeanDefinition;
 import java.lang.reflect.Constructor;
 
 /**
@@ -12,5 +12,5 @@ import java.lang.reflect.Constructor;
 public interface InstantiationStrategy {
 
   // 实例化的方法
-  Object instantiate(BeanDefinition beanDefinition, Constructor ctor, Object[] args);
+  Object instantiate(BeanDefinition beanDefinition, Constructor<?> ctor, Object[] args);
 }
