@@ -62,7 +62,7 @@ PropertyValues封装了PropertyValue，PropertyValue类中记录了Bean的每个
 
 3.网络文件读取
 
-这个接口就是ReSource.java, 其中含有getInputStream()的方法
+这个接口就是Resource.java, 其中含有getInputStream()的方法
 上述三个功能分别写3个类实现该接口，感觉像是3种策略。
 
 接下来对Resource接口进行包装，编写一个类 通过文件路径 来获取Resource接口：ResourceLoader(这同样是一个接口)
@@ -81,6 +81,46 @@ bean注入流程是：
 3.PropertyValue属性的注入
 
 4.Bean的注册
+
+#### step6
+上一章需要我们自己创建BeanFactory，XmlBeanDefinitionReader 等类来读取配置文件中定义的bean，
+交给容器进行管理。
+```java
+    String filePath = "classpath:spring.xml";
+    // bean工厂
+    DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+    // 加载器
+    DefaultResourceLoader loader = new DefaultResourceLoader();
+
+    XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader();
+    reader.setRegistry(beanFactory);
+    reader.setResourceLoader(loader);
+
+    reader.loadBeanDefinition(filePath);
+
+    UserService userService = (UserService) beanFactory.getBean("userService");
+    userService.find();
+```
+本章主要是创建了Context的相关接口，把这一行为进行封装(refresh方法)。
+
+Context是单独的一个接口体系，它继承了BeanFactory接口（有点复杂 容易绕晕）
+
+本章其次添加了BeanFactoryPostProcessor 和 BeanPostProcessor 接口，用于扩展容器的功能。
+
+BeanFactoryPostProcessor 作用于 bean的实例化之前
+BeanPostProcessor 作用于 bean的实例化之后，在bean的初始化之前 和 之后。
+
+感觉BeanFactory 和 Context 接口体系整体还是比较复杂的，我有点被绕晕了。
+但暂时理解到这,对我来说也差不多了。
+
+有了Context接口之后，获取bean就容易了许多:
+```java
+    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring.xml");
+    UserService userService = (UserService) context.getBean("userService");
+    userService.find();
+```
+
+
 
 
 
