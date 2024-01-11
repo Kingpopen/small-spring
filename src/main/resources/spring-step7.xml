@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+  <bean id="userDao" class="com.spring.step7.UserDao" init-method="initMethod" destroy-method="destroyMethod"/>
+  <bean id="friend" class="com.spring.step7.User">
+    <property name="name" value="kingpopen"/>
+    <property name="age" value="18"/>
+  </bean>
+  <bean id="userService" class="com.spring.step7.UserService">
+    <property name="id" value="1"/>
+    <property name="age" value="12"/>
+    <property name="friend" ref="friend"/>
+    <property name="userDao" ref="userDao"/>
+  </bean>
+
+  <bean class="com.spring.step7.postprocessor.support.MyBeanPostProcessor"/>
+  <bean class="com.spring.step7.postprocessor.support.MyBeanFactoryPostProcessor"/>
+</beans>

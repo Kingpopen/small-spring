@@ -119,8 +119,14 @@ BeanPostProcessor 作用于 bean的实例化之后，在bean的初始化之前 �
     UserService userService = (UserService) context.getBean("userService");
     userService.find();
 ```
+#### step7
+上一章添加了在bean 实例化之前 和 初始化前后 添加操作的方法。
 
+本章主要是添加了在bean初始化时（提供接口 InitializingBean）
 
+和 销毁时执行的方法（提供接口 DisposableBean）。
+
+可以采用接口实现 和 xml配置文件 两种方式指定初始化方法 和 销毁方法。
 
 
 
