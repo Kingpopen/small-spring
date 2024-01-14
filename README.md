@@ -160,3 +160,10 @@ BeanPostProcessor 作用于 bean的实例化之后，在bean的初始化之前 �
   }
 ```
 
+#### step9
+本章实现的是增强生成bean的功能（FactoryBean）
+
+个人认为FactoryBean的作用是：使用一个bean（FactoryBean）来创建你想要的bean
+
+实际上你想要的bean是通过FactoryBean这个工厂Bean进行创建的。
+

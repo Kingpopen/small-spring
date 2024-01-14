@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+  <bean id="userProxy" class="com.spring.step9.ProxyUserDao" scope="singleton"/>
+
+  <bean id="friend" class="com.spring.step9.User">
+    <property name="name" value="kingpopen"/>
+    <property name="age" value="18"/>
+  </bean>
+
+  <bean id="userService" class="com.spring.step9.UserService" scope="prototype">
+    <property name="id" value="2"/>
+    <property name="age" value="12"/>
+    <property name="friend" ref="friend"/>
+    <property name="userDao" ref="userProxy"/>
+  </bean>
+</beans>
