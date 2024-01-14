@@ -128,5 +128,35 @@ BeanPostProcessor 作用于 bean的实例化之后，在bean的初始化之前 �
 
 可以采用接口实现 和 xml配置文件 两种方式指定初始化方法 和 销毁方法。
 
+#### step8
+本章实现bean的aware能力，有些场景需要在Bean中获取容器信息，bean信息，类加载器信息等等
 
+但是又不能提前将这些内容作为属性放在bean中，因此提供一个Aware的接口，需要什么信息就实现相应的接口。
+
+对于BeanFactory的相应的感知信息 是在bean的初始化之前就放入了bean中。
+
+对于Context的相应感知信息 是通过BeanPostProcessor的BeforeInitialization方法放入bean中的。
+
+因为Context的信息只在Context的类中才有，因此需要在Context类中的refresh方法执行的时候，
+
+就生成一个BeanPostProcessor 然后将Context信息放入其中。
+
+```java
+  public void refresh() {
+    // 创建BeanFactory 并注册BeanDefinition
+    refreshBeanFactory();
+    // 获取BeanFactory
+    ConfigurableListableBeanFactory beanFactory = getBeanFactory();
+
+    // 添加一个ApplicationContextAware的后置处理器
+    beanFactory.addBeanPostProcessor(new ApplicationContextAwarePostProcessor(this));
+
+    // 执行BeanFactoryPostProcessor （在bean实例化之前）
+    invokeBeanFactoryPostProcessors(beanFactory);
+    // 注册BeanPostProcessor （在bean实例化之后 执行）
+    registerBeanPostProcessors(beanFactory);
+    // Bean的实例化
+    beanFactory.preInstantiateSingletons();
+  }
+```
 
