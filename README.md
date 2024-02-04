@@ -167,3 +167,12 @@ BeanPostProcessor 作用于 bean的实例化之后，在bean的初始化之前 �
 
 实际上你想要的bean是通过FactoryBean这个工厂Bean进行创建的。
 
+#### step10
+本章实现监听器的功能，主要含有几个关键的概念:
+1. 事件(Event)
+2. 监听器(Listener)
+3. 派发器(multicastEvent)
+4. 发布事件(publish)
+
+发布事件 -> 派发器 派发事件(找到有哪些监听器 监听了该事件) -> 调用监听器,执行监听的方法。
+

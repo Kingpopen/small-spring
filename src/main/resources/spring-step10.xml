@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+  <!-- 学习监听器的bean-->
+  <bean id="learnListener" class="com.spring.step10.LearnListener" scope="singleton"/>
+
+  <bean id="contextRefreshedListener" class="com.spring.step10.ContextRefreshedListener"/>
+
+  <bean id="contextClosedListener" class="com.spring.step10.ContextClosedListener"/>
+
+</beans>
